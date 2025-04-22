@@ -2,13 +2,8 @@
 
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
 
-const data = [
-  { name: "Lunes", lluvia: 5, humedad: 30 },
-  { name: "Martes", lluvia: 0, humedad: 10 },
-  { name: "Miércoles", lluvia: 12, humedad: 50 },
-];
-
-export default function Chart() {
+// Recibe la prop `data`
+export default function Chart({ data }: { data: any[] }) {
   return (
     <ResponsiveContainer width="100%" height={250}>
       <BarChart data={data}>
