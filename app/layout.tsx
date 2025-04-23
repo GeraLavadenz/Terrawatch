@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-//import { MQTTProvider } from "@/context/SensorContext"; //AÑADIDO
-//import { SensorProvider } from '@/context/MQTTContext'
+import { MQTTProvider } from "@/context/MQTTContext"; // Asegúrate que el nombre sea correcto
 import "./globals.css";
 
 const geistSans = Geist({
@@ -29,9 +28,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-          
+        <MQTTProvider>
           {children}
-          
+        </MQTTProvider>
       </body>
     </html>
   );

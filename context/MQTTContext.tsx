@@ -1,7 +1,8 @@
 // context/MQTTContext.tsx
-import { ReactNode } from "react";
+"use client";
+
 import mqtt from "mqtt";
-import React, { createContext, useEffect, useState } from "react";
+import React, { createContext, useEffect, useState, ReactNode } from "react";
 
 export const MQTTContext = createContext<any>(null);
 

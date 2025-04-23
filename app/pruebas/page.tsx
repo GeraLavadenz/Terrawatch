@@ -1,17 +1,16 @@
-'use client'
-import { useSensores } from "@/context/MQTTContext"
+"use client";
+
+import { useContext } from "react";
+import { MQTTContext } from "@/context/MQTTContext"; // o SensorContext si usas ese nombre
 
 export default function Page() {
-  const { datos } = useSensores()
-
-  if (!datos) return <p>⏳ Cargando datos...</p>
+  const data = useContext(MQTTContext);
 
   return (
     <div>
-      <h1>📊 Página principal</h1>
-      <p>🌱 Humedad: {datos.humedad}</p>
-      <p>🌡️ Temperatura: {datos.temperatura} °C</p>
-      <p>☔ Lluvia: {datos.lluvia === 0 ? "Sí" : "No"}</p>
+      <h2>Humedad del suelo</h2>
+      <pre>{JSON.stringify(data, null, 2)}</pre>
     </div>
-  )
+  );
 }
+
