@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { MQTTProvider } from "@/context/MQTTContext"; // 👉 AÑADIDO
+//import { MQTTProvider } from "@/context/SensorContext"; //AÑADIDO
+import { SensorProvider } from '@/context/SensorContext'
 import "./globals.css";
 
 const geistSans = Geist({
@@ -24,13 +25,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="es">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <MQTTProvider>
+          <SensorProvider>
           {children}
-        </MQTTProvider>
+          </SensorProvider>
       </body>
     </html>
   );

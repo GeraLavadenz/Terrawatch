@@ -1,15 +1,17 @@
 'use client'
-import { useMQTT } from '@/context/MQTTContext'
+import { useSensores } from "@/context/SensorContext"
 
 export default function Page() {
-  const { datos } = useMQTT()
+  const { datos } = useSensores()
+
+  if (!datos) return <p>⏳ Cargando datos...</p>
 
   return (
-    <div style={{ padding: '2rem' }}>
-      <h1>Dashboard de Sensores</h1>
-      <p>🌱 Humedad: {datos?.humedad ?? 'Cargando...'}</p>
-      <p>🌡️ Temperatura: {datos?.temperatura ?? 'Cargando...'} °C</p>
-      <p>🌧️ Lluvia: {datos?.lluvia === 0 ? 'Lluvia' : 'Sin lluvia'}</p>
+    <div>
+      <h1>📊 Página principal</h1>
+      <p>🌱 Humedad: {datos.humedad}</p>
+      <p>🌡️ Temperatura: {datos.temperatura} °C</p>
+      <p>☔ Lluvia: {datos.lluvia === 0 ? "Sí" : "No"}</p>
     </div>
   )
 }
