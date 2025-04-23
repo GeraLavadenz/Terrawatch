@@ -7,11 +7,11 @@ import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert";
 const Chart = dynamic(() => import('./Chart'), { ssr: false });
 
 const datosClima = [
-  { name: "Lunes", lluvia: 5, humedad: 30 },
-  { name: "Martes", lluvia: 0, humedad: 10 },
-  { name: "Miércoles", lluvia: 12, humedad: 50 },
-  { name: "Jueves", lluvia: 10, humedad: 50 },
-  { name: "Viernes", lluvia: 8, humedad: 50 },
+  { name: "Lunes", lluvia: 70, humedad: 67 },
+  { name: "Martes", lluvia: 70, humedad: 67},
+  { name: "Miércoles", lluvia: 70, humedad: 90 },
+  { name: "Jueves", lluvia: 0, humedad: 0 },
+  { name: "Viernes", lluvia: 0, humedad: 0 },
 ];
 
 export default function Dashboard() {

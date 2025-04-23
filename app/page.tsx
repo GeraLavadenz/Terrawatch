@@ -2,16 +2,13 @@
 
 import Dashboard from "@/components/Dashboard";
 import Head from "next/head";
-
+import { Component } from "../components/chart-bar-multiple"
+import Components from "../components/chart-radial-text"
 export default function Home() {
   return (
-    <>
-      <Head>
-        <title>Dashboard de Clima</title>
-      </Head>
-      <main className="min-h-screen p-4 bg-gray-50">
-        <Dashboard />
-      </main>
-    </>
+    <div className="p-4">
+    <Component />
+    <Components />
+  </div>
   );
 }
