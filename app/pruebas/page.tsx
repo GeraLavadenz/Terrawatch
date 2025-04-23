@@ -1,5 +1,5 @@
 'use client'
-import { useSensores } from "@/context/SensorContext"
+import { useSensores } from "@/context/MQTTContext"
 
 export default function Page() {
   const { datos } = useSensores()
